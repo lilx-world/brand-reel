@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuki Ip — Brand &amp; Founder Video Reel</title>
+  <meta name="description"
+    content="Founder, interview and brand video editing. LOG footage graded, motion graphics built from a script. Broadcast background on CNA.">
+  <style>
+    /* ============================================================
+     REEL TEMPLATE — worked example (this copy is the lecture reel).
+
+     Keep this whole <style> block VERBATIM in every reel — the warm-paper
+     editorial design is the house style and should not drift between jobs.
+     Rewrite only the BODY content: <title>/meta, masthead headline + lede,
+     the gap-note, the index nav, and one <section class="work"> per video.
+
+     Each video section is framed for ONE buyer-relevant point. Below, the
+     framing register is lecture/interview craft; for a different job, change
+     the register (e.g. short-form hooks, brand-film polish) but keep the
+     same HTML structure and the ".demo" callout naming the relevant decision.
+     ============================================================ */
+
+    :root {
+      --paper: #f4f1ea;
+      --paper-2: #ebe6db;
+      --ink: #1c1a17;
+      --ink-soft: #4a463f;
+      --ink-faint: #8a8478;
+      --line: #d8d2c4;
+      --line-strong: #bcb4a2;
+
+      --accent: #7c3a2f;
+      --craft: #9a6a1d;
+
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --mono: "SF Mono", ui-monospace, "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+      --maxw: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.6;
+      background-image:
+        radial-gradient(circle at 20% 0%, rgba(0, 0, 0, 0.015), transparent 60%),
+        radial-gradient(circle at 90% 100%, rgba(0, 0, 0, 0.02), transparent 55%);
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    ::selection {
+      background: rgba(124, 58, 47, 0.20);
+    }
+
+    /* ---------- masthead ---------- */
+    header.masthead {
+      padding: 64px 0 30px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin: 0 0 22px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .kicker .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1.title {
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+      font-weight: 600;
+    }
+
+    h1.title em {
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+
+    .lede {
+      font-size: clamp(18px, 2.4vw, 22px);
+      max-width: 64ch;
+      color: var(--ink-soft);
+      margin: 0 0 6px;
+    }
+
+    /* ---------- the note ---------- */
+    .gap-note {
+      margin: 40px 0 8px;
+      border-left: 3px solid var(--accent);
+      background: rgba(124, 58, 47, 0.055);
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .gap-note .gn-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .gap-note p {
+      margin: 0;
+      font-size: 17px;
+      color: var(--ink-soft);
+    }
+
+    .gap-note strong {
+      color: var(--ink);
+    }
+
+    /* ---------- index nav ---------- */
+    .index {
+      margin: 44px 0 4px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .index a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 16px 18px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      transition: background .18s ease;
+      display: block;
+    }
+
+    .index a:last-child {
+      border-right: none;
+    }
+
+    .index a:hover {
+      background: var(--paper-2);
+    }
+
+    .index a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .index .num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--ink-faint);
+      letter-spacing: 0.1em;
+    }
+
+    .index .nm {
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 4px;
+      line-height: 1.2;
+    }
+
+    .index .tp {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-faint);
+      margin-top: 6px;
+    }
+
+    /* ---------- work sections ---------- */
+    section.work {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .work-index {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink-faint);
+      letter-spacing: 0.1em;
+    }
+
+    .seg-chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--accent);
+    }
+
+    h2.work-title {
+      font-size: clamp(28px, 4.5vw, 40px);
+      margin: 6px 0 4px;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
+    .credit {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--ink-faint);
+      margin: 0 0 18px;
+    }
+
+    .work-sub {
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      max-width: 62ch;
+    }
+
+    /* video embed */
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #15130f;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ---------- "what it demonstrates" block ---------- */
+    .demo {
+      margin-top: 30px;
+      border: 1px solid rgba(154, 106, 29, 0.38);
+      background: rgba(154, 106, 29, 0.06);
+      border-radius: 6px;
+      padding: 20px 24px;
+    }
+
+    .demo .demo-tag {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--craft);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .demo p {
+      margin: 0;
+      font-size: 16.5px;
+      color: var(--ink-soft);
+    }
+
+    .demo strong {
+      color: var(--ink);
+    }
+
+    /* ---------- closing ---------- */
+    footer.close {
+      padding: 60px 0 90px;
+    }
+
+    footer.close .ct {
+      font-size: clamp(22px, 3.4vw, 30px);
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin: 0 0 14px;
+    }
+
+    footer.close p {
+      color: var(--ink-soft);
+      max-width: 60ch;
+      margin: 0 0 10px;
+    }
+
+    footer.close a.mail {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .sig {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: 0.06em;
+      margin-top: 26px;
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 720px) {
+      .index {
+        grid-template-columns: 1fr;
+      }
+
+      .index a {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      body {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- ============ MASTHEAD ============ -->
+    <header class="masthead">
+      <p class="kicker"><span class="dot"></span> Yuki Ip &nbsp;·&nbsp; Brand &amp; founder video reel</p>
+      <h1 class="title">From raw footage <em>to a finished film.</em></h1>
+      <p class="lede">
+        Founder stories, interviews and brand explainers. I pick the takes, grade the footage,
+        clean the sound and build the graphics. Five pieces below, each matched to one of the
+        videos you plan to make.
+      </p>
+
+      <div class="gap-note">
+        <p class="gn-tag">◆ On these pieces</p>
+        <p>
+          The <strong>CNA</strong> films (01, 02, 05) were shot in <strong>LOG</strong>, and I
+          owned their post: edit, color grade, on-screen graphics and sound. Piece 03 is cut from
+          one interview with no script. Piece 04 started as a script only, and I built everything
+          you see.
+        </p>
+      </div>
+
+      <nav class="index" aria-label="Reel index">
+        <a href="#quant">
+          <span class="num">01</span>
+          <div class="nm">Demystifying The Quant Edge</div>
+          <div class="tp">Founder-led · LOG graded</div>
+        </a>
+        <a href="#anh">
+          <span class="num">02</span>
+          <div class="nm">Refugee Chef — Anh Lê</div>
+          <div class="tp">Interview film · LOG graded</div>
+        </a>
+        <a href="#willow">
+          <span class="num">03</span>
+          <div class="nm">Willow — Customer Story</div>
+          <div class="tp">One interview · No script</div>
+        </a>
+        <a href="#lacemaker">
+          <span class="num">04</span>
+          <div class="nm">The Lacemaker</div>
+          <div class="tp">Educational · Motion graphics</div>
+        </a>
+        <a href="#web3">
+          <span class="num">05</span>
+          <div class="nm">Web3 and Digital Trust</div>
+          <div class="tp">Interview · Data graphics</div>
+        </a>
+      </nav>
+    </header>
+
+    <!-- ============ 01 — QUANT EDGE ============ -->
+    <section class="work" id="quant">
+      <div class="work-head">
+        <span class="work-index">01</span>
+        <span class="seg-chip">Founder-led feature · CNA</span>
+      </div>
+      <h2 class="work-title">Demystifying The Quant Edge</h2>
+      <p class="credit">Research · Script · Direction · Edit · Color · Sound</p>
+      <p class="work-sub">
+        An excerpt from a 23-minute film on a quantitative hedge fund. The firm's leaders explain
+        its history, how long it holds positions, and how its models make trading decisions.
+        Shot in LOG and graded for a warm, premium look.
+      </p>
+
+      <div class="video-frame">
+        <iframe loading="lazy" title="Demystifying The Quant Edge"
+          src="https://play.gumlet.io/embed/6a4118193583eb1726206fdc" referrerpolicy="origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;"></iframe>
+      </div>
+
+      <div class="demo">
+        <p class="demo-tag">◆ For your founder videos</p>
+        <p>
+          This is the closest match to a <strong>founder introduction</strong>. The leaders talk in
+          their own words, and the timelines and text on screen land on the exact word that needs
+          them. A hard subject reads as clear and confident, which is what an About Us video has to do.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 02 — ANH LE ============ -->
+    <section class="work" id="anh">
+      <div class="work-head">
+        <span class="work-index">02</span>
+        <span class="seg-chip">Interview film · CNA</span>
+      </div>
+      <h2 class="work-title">Refugee Chef — Anh Lê</h2>
+      <p class="credit">Post Direction · Edit · Color · Sound &nbsp;|&nbsp; Series won a Gold World Medal, New York Festivals</p>
+      <p class="work-sub">
+        The full 23-minute film. A Vietnamese boat refugee builds a restaurant group in
+        Copenhagen. The story moves between her success today and the escape that started it,
+        carried by her interview, family photos and food footage.
+      </p>
+
+      <div class="video-frame">
+        <iframe loading="lazy" title="Refugee Chef — Anh Lê"
+          src="https://play.gumlet.io/embed/6a4281d479d93c513c9e8fad" referrerpolicy="origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;"></iframe>
+      </div>
+
+      <div class="demo">
+        <p class="demo-tag">◆ For your interview and long-form content</p>
+        <p>
+          <strong>Long-form pacing from interview footage.</strong> Shot in LOG across many
+          setups and graded to one look, so the cuts don't jump. It's shown in full so you can
+          judge how 23 minutes holds, not just how one clip is cut.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 03 — WILLOW ============ -->
+    <section class="work" id="willow">
+      <div class="work-head">
+        <span class="work-index">03</span>
+        <span class="seg-chip">Customer story · Spec edit</span>
+      </div>
+      <h2 class="work-title">Willow — Customer Story</h2>
+      <p class="credit">Story · Edit · AI visuals</p>
+      <p class="work-sub">
+        A 72-second vertical story for Willow, a voice transcription app. I got one Riverside
+        podcast recording and no script. I found the story in that interview. Every other shot
+        is an AI-generated image or clip, made to fit what the speaker says.
+      </p>
+
+      <div class="video-frame" style="aspect-ratio: 9 / 16; max-width: 380px; margin: 0 auto;">
+        <iframe loading="lazy" title="Willow — Customer Story"
+          src="https://play.gumlet.io/embed/6aaaa92eef37684c945de4e2" referrerpolicy="origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;"></iframe>
+      </div>
+
+      <div class="demo">
+        <p class="demo-tag">◆ For working with little oversight</p>
+        <p>
+          <strong>Story judgment with no brief to lean on.</strong> I chose the strongest lines,
+          set the order and built the visuals around them. This is the work you'd hand me when
+          the raw footage arrives with only a short creative note.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 04 — LACEMAKER ============ -->
+    <section class="work" id="lacemaker">
+      <div class="work-head">
+        <span class="work-index">04</span>
+        <span class="seg-chip">Educational explainer · Motion graphics</span>
+      </div>
+      <h2 class="work-title">The Lacemaker</h2>
+      <p class="credit">Image sourcing · Motion graphics · Edit · Rights log</p>
+      <p class="work-sub">
+        An art-history video on why Vermeer painted the front of <em>The Lacemaker</em> out of
+        focus. The client sent a script and voiceover only. I sourced every image, built all
+        the motion graphics, and edited the film.
+      </p>
+
+      <div class="video-frame">
+        <iframe loading="lazy" title="The Lacemaker"
+          src="https://play.gumlet.io/embed/6addba3fe655cfbd8126d95d" referrerpolicy="origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;"></iframe>
+      </div>
+
+      <div class="demo">
+        <p class="demo-tag">◆ For your explainers and brand content</p>
+        <p>
+          <strong>Explainer motion graphics, built to the voiceover.</strong> Slow push-ins move
+          across the painting like a magnifying glass. A split screen sets the painting beside a
+          modern shallow-focus image, and quiet serif titles keep the focus on the art. Every asset
+          has a logged source and licence. Two images are AI-generated, and the log says so.
+          <a class="mail" href="lacemaker-media-credits.pdf" target="_blank" rel="noopener">See the media log (PDF)</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 05 — WEB3 ============ -->
+    <section class="work" id="web3">
+      <div class="work-head">
+        <span class="work-index">05</span>
+        <span class="seg-chip">Interview &amp; data explainer · CNA</span>
+      </div>
+      <h2 class="work-title">Web3 and Digital Trust</h2>
+      <p class="credit">Research · Script · Direction · Edit · Color · Sound</p>
+      <p class="work-sub">
+        A sit-down interview on smart contracts, digital wallets and online identity risk.
+        Clean charts appear the moment each number is spoken.
+      </p>
+
+      <div class="video-frame">
+        <iframe loading="lazy" title="Web3 and Digital Trust"
+          src="https://play.gumlet.io/embed/6a42f98d3583eb17264a1074" referrerpolicy="origin"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;"></iframe>
+      </div>
+
+      <div class="demo">
+        <p class="demo-tag">◆ For your educational videos</p>
+        <p>
+          <strong>Graphics inside an interview, not on top of it.</strong> The charts are timed
+          to the speaker, so a dense topic stays easy to follow. It's the same skill an
+          educational brand video needs when the founder explains how something works.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CLOSE ============ -->
+    <footer class="close">
+      <p class="ct">The through-line</p>
+      <p>
+        I take raw footage to a finished film: pick the takes, grade the LOG, clean the sound and
+        build the graphics. I check in as I go, so the first cut you see is close to final.
+      </p>
+      <p>
+        <a class="mail" href="https://www.upwork.com/freelancers/~010414b5da3ca038af" target="_blank"
+          rel="noopener">View my Upwork profile</a>
+      </p>
+      <p class="sig">Yuki Ip · Editor</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
